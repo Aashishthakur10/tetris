@@ -1,1 +1,1 @@
-/Library/Developer/CommandLineTools/usr/bin/c++  -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/tetris.dir/source.cpp.o  -o tetris 
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/tetris.dir/source.cpp.o  -o tetris.exe -Wl,--out-implib,libtetris.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

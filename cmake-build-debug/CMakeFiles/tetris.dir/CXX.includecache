@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/aashishthakur/CLionProjects/tetris/source.cpp
+/cygdrive/c/Users/carep/Desktop/AashishProject/tetris/source.cpp
 iostream
+-
+windows.h
+-
+stdio.h
 -
 

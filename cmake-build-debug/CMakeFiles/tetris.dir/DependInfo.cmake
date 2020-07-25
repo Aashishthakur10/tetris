@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/aashishthakur/CLionProjects/tetris/source.cpp" "/Users/aashishthakur/CLionProjects/tetris/cmake-build-debug/CMakeFiles/tetris.dir/source.cpp.o"
+  "/cygdrive/c/Users/carep/Desktop/AashishProject/tetris/source.cpp" "/cygdrive/c/Users/carep/Desktop/AashishProject/tetris/cmake-build-debug/CMakeFiles/tetris.dir/source.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

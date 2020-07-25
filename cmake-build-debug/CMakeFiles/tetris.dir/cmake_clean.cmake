@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/tetris.dir/source.cpp.o"
-  "tetris"
+  "libtetris.dll.a"
+  "tetris.exe"
   "tetris.pdb"
 )
 

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/aashishthakur/CLionProjects/tetris
+# Install script for directory: /cygdrive/c/Users/carep/Desktop/AashishProject/tetris
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/aashishthakur/CLionProjects/tetris/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/cygdrive/c/Users/carep/Desktop/AashishProject/tetris/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
