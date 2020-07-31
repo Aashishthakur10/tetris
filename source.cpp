@@ -2,8 +2,10 @@
 #include <windows.h>
 #include <stdio.h>
 #include <thread>
-
+#include<vector>
 using namespace std;
+
+
 wstring tetromino[7];
 //playing field coords
 int nFieldWidth = 12;
@@ -82,6 +84,9 @@ int main() {
     int nSpeed = 20;
     int nSpeedCounter = 0;
     bool force = false;
+    vector<int> vLines;
+    int nPieceCount = 0;
+    int nScore = 0;
 
     while (!done) {
 
@@ -127,6 +132,13 @@ int main() {
                         }
                     }
                 }
+
+                nPieceCount++;
+                if(nPieceCount%10==0){
+                    if (nSpeed >=10){
+                        nSpeed -=1;
+                    }
+                }
                 // Horizontal lines?
                 for(int i = 0; i < 4; i++){
                     if(nCurrY + i  < nFieldHeight - 1){
@@ -137,9 +149,15 @@ int main() {
                         if(lineFound){
                             for(int j = 1; j < nFieldWidth-1; j++)
                             pField[(nCurrY+i)*nFieldWidth+(nCurrX+j)] = 8;
+                            vLines.push_back(nCurrY+i);
                         }
                     }
                 }
+
+
+                nScore += 25;
+                if(!vLines.empty())	nScore += (1 << vLines.size()) * 100;
+
                 // Pick the next piece
                 nCurrPiece = rand() % 7;
                 nCurrRotation = 0;
@@ -168,6 +186,23 @@ int main() {
             }
         }
 
+        swprintf(reinterpret_cast<wchar_t *>(&screen[2 * nScreenWidth + nFieldWidth + 6]), 16, L"SCORE: %8d", nScore);
+
+        if(!vLines.empty()){
+            WriteConsoleOutputCharacter(hConsole, screen, nScreenWidth * nScreenHeight, {0, 0}, &dw);
+            this_thread::sleep_for(400ms);
+
+            for(auto &v : vLines){
+                for(int px =1; px < nFieldWidth; px++){
+                    for (int py = v; py > 0; py++){
+                        pField[py * nFieldWidth + px] = pField[(py-1) * nFieldWidth + px];
+                    pField[px] = 0;
+                    }
+                }
+                vLines.clear();
+            }
+
+        }
         //Display
         WriteConsoleOutputCharacter(hConsole, screen, nScreenWidth * nScreenHeight, {0, 0}, &dw);
     }
